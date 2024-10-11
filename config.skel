@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+import os
+
+GRAFANA_TOKEN="a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6"
+GRAFANA_SERVER="grafana.example.com"
+GRAFANA_PORT=3000
+IPERF3_SERVER="iperf.example.com"
+IPERF3_PORT=5201
+IPERF3_OMIT=1
+IPERF3_DURATION=5
+INTERVAL=10
+
+if os.environ.get("GRAFANA_TOKEN"):
+    GRAFANA_TOKEN = os.environ.get("GRAFANA_TOKEN")
+if os.environ.get("GRAFANA_SERVER"):
+    GRAFANA_SERVER = os.environ.get("GRAFANA_SERVER")
+if os.environ.get("GRAFANA_PORT"):
+    GRAFANA_PORT = int(os.environ.get("GRAFANA_PORT"))
+
+if os.environ.get("IPERF3_SERVER"):
+    IPERF3_SERVER = os.environ.get("IPERF3_SERVER")
+if os.environ.get("IPERF3_PORT"):
+    IPERF3_PORT = int(os.environ.get("IPERF3_PORT"))
+if os.environ.get("IPERF3_OMIT"):
+    IPERF3_OMIT = int(os.environ.get("IPERF3_OMIT"))
+if os.environ.get("IPERF3_DURATION"):
+    IPERF3_DURATION = int(os.environ.get("IPERF3_DURATION"))
+
+if os.environ.get("INTERVAL"):
+    INTERVAL = int(os.environ.get("INTERVAL"))
